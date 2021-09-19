@@ -11,9 +11,8 @@ Things that you will need
 
 Installation
 1. Prepare RPI 0 with Buster build in server mode
-2. Install influxdb ver 1.8.5 (Raspberry pi)
-    https://pimylifeup.com/raspberry-pi-influxdb/
-    sudo apt update
+2. Install influxdb ver 1.8.5 (Raspberry pi) https://pimylifeup.com/raspberry-pi-influxdb/
+sudo apt update
     sudo apt upgrade
     wget -qO- https://repos.influxdata.com/influxdb.key | sudo apt-key add -
     (important step add only the one belongs to your raspbian distro - check with cat /etc/os-release)
