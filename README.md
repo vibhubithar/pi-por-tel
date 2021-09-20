@@ -9,7 +9,11 @@ This repository focuses on the data collection aspect of the device. The assumpt
 
 - Raspberry Pi Zero (Chosen because the form factor is small) - https://amzn.to/3nRFF2A 
 - Berry IMU GPS - V4 (GPS IMU HAT for RPI) - https://amzn.to/3AtjZxd
-- External powered GPS antennae - https://amzn.to/2XBlEmg
+- External powered GPS antenna - https://amzn.to/2XBlEmg
+- mini router (optional but handy) - https://amzn.to/3hOvk3m
+
+## Assembly
+![Screenshot](assembled-pi-por-tel.jpg)
 
 ## Installation
 
