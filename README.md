@@ -16,7 +16,10 @@ Not at this time, but interfacing OBDII wont be that hard
 ##### How do you power it?
 USB port from my car powers the mini router and then mini-router's USB port powers the device
 
-This repository focuses on the data collection aspect of the device. The assumption is that the device will be offline and will be continuously collecting data. In another repository, I'll focus on the data synchronization with the central location where it can be analyzed.
+##### What is this repository for?
+This repository focuses on the data collection aspect of the device. The assumption is that the device will be offline and will be continuously collecting data. In another repository, I'll focus on the data synchronization with the central location where it can be analyzed. 
+
+So assemble, clone and go-on!
 
 ## Things that you will need
 
