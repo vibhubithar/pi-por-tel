@@ -7,9 +7,9 @@ This repository focuses on the data collection aspect of the device. The assumpt
 
 ## Things that you will need
 
-- Raspberry Pi Zero (Chosen because the form factor is small)
-- Berry IMU GPS - V4 (GPS IMU HAT for RPI)
-- External powered GPS antennae
+- Raspberry Pi Zero (Chosen because the form factor is small) - https://amzn.to/3nRFF2A 
+- Berry IMU GPS - V4 (GPS IMU HAT for RPI) - https://amzn.to/3AtjZxd
+- External powered GPS antennae - https://amzn.to/2XBlEmg
 
 ## Installation
 
@@ -69,7 +69,7 @@ magXmax =  289
 magYmax =  2633
 magZmax =  2242
 ```
-5. Run the command
+4. Run the command
 without tag values for influxdb
 ```bash
 python3 berryIMU-Gforce-TPA-GPS-influx.py
