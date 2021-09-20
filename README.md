@@ -3,6 +3,19 @@
 ##### (Noun) A RaspberryPi, BerryIMU-GPS, and InfluxDB based portable telemetry device
 ##### "use pi-por-tel to talk to your car"
 
+##### So what is pi-por-tel?
+It is a portable vehicle telemetry collection device or simply put it logs the sensors attached to this device on to a locally installed timeSeries database. It's hardware based on Rpi zero, inertial measurement unit (IMU) and GPS, with a software stack that uses Python and influxDB
+
+##### What can it do for me?
+- You can place it your car to collect race telemetry on the track and analyze it for faster track times. 
+- I am using it to see what is my car doing on curvy roads that makes my child car sick.
+
+##### Is it talking to the car using OBDII?
+Not at this time, but interfacing OBDII wont be that hard
+
+##### How do you power it?
+USB port from my car powers the mini router and then mini-router's USB port powers the device
+
 This repository focuses on the data collection aspect of the device. The assumption is that the device will be offline and will be continuously collecting data. In another repository, I'll focus on the data synchronization with the central location where it can be analyzed.
 
 ## Things that you will need
