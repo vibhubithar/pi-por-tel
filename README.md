@@ -10,14 +10,18 @@ This repository focuses on the data collection aspect of the device. The assumpt
 - Raspberry Pi Zero (Chosen because the form factor is small) - https://amzn.to/3nRFF2A 
 - Berry IMU GPS - V4 (GPS IMU HAT for RPI) - https://amzn.to/3AtjZxd
 - External powered GPS antenna - https://amzn.to/2XBlEmg
-- mini router (optional but handy) - https://amzn.to/3hOvk3m
+- Mini router (optional but handy) - https://amzn.to/3hOvk3m
 
-## Assembly
+## Hardware Assembly
+
+### It's so simple that this picture should summarize
 ![Screenshot](assembled-pi-por-tel.jpg)
 
-## Installation
+## Software Installation
 
 ### Prepare RPI zero with Buster build (in server mode)
+#### - RPI OS Image - you can get it from here https://www.raspberrypi.org/software/operating-systems/#raspberry-pi-os-32-bit 
+#### - SD card creation - I used etcher from balena.io 
 
 ### Install influxdb ver 1.8.5 (Raspberry pi) 
 ```bash
@@ -83,7 +87,9 @@ with tag values for influxdb
 ```bash
 python3 berryIMU-Gforce-TPA-GPS-influx.py --trip_type '<trip type on road /water / offroad>' --vehicle_type '<vehcile type SUV>' --brand '<vehicle brand>' --model '<vehicle model>' --seats <number of passengers> --mode '<what mode was the car in comfort/sports>' --logger_location '<location where device was placed>' --owner '<owner of the vehicle>' --tripID <numerical id of the trip> --trip_desc '<description of trip>'
 ```
-
+## Outcome of all the hardwork in grafana
+![Screenshot](pi-por-tel-grafana1.png)
+![Screenshot](pi-por-tel-grafana-2.png)
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
