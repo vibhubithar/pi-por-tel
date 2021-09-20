@@ -7,12 +7,13 @@ This repository focuses on the data collection aspect of the device. The assumpt
 
 ## Things that you will need
 
-Raspberry Pi Zero (Chosen because the form factor is small)
-Berry IMU GPS - V4 (GPS IMU HAT for RPI)
-External powered GPS antennae
-Installation
+- Raspberry Pi Zero (Chosen because the form factor is small)
+- Berry IMU GPS - V4 (GPS IMU HAT for RPI)
+- External powered GPS antennae
 
-## Prepare RPI zero with Buster build (in server mode)
+## Installation
+
+### Prepare RPI zero with Buster build (in server mode)
 
 ### Install influxdb ver 1.8.5 (Raspberry pi) 
 https://pimylifeup.com/raspberry-pi-influxdb/ 
