@@ -16,7 +16,6 @@ This repository focuses on the data collection aspect of the device. The assumpt
 ### Prepare RPI zero with Buster build (in server mode)
 
 ### Install influxdb ver 1.8.5 (Raspberry pi) 
-https://pimylifeup.com/raspberry-pi-influxdb/ 
 ```bash
 sudo apt update 
 sudo apt upgrade 
@@ -42,6 +41,15 @@ sudo pip3 install board
 sudo pip3 install busio 
 sudo pip3 install influxdb
 ```
+## Usage
+1. Clone the repository on your raspberry pi
+2. Run calibrateBerryIMU.py
+```bash
+python3 calibrateBerryIMU.py
+```
+3. Paste the results of the step above in the berryIMU-Gforce-TPA-GPS-influx.py file as shown in the section below
+4. Run the command
+5. 
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
