@@ -39,6 +39,10 @@ So assemble, clone and go-on!
 #### - RPI OS Image - you can get it from here https://www.raspberrypi.org/software/operating-systems/#raspberry-pi-os-32-bit 
 #### - SD card creation - I used etcher from balena.io 
 
+#### Setup BerryIMU HAT for Raspberry pi
+
+Follow every step at :  https://ozzmaker.com/berrygps-setup-guide-raspberry-pi/
+
 ### Install influxdb ver 1.8.5 (Raspberry pi) 
 ```bash
 sudo apt update 
