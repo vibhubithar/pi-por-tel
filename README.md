@@ -41,7 +41,10 @@ So assemble, clone and go-on!
 
 #### Setup BerryIMU HAT for Raspberry pi
 
-Follow every step at :  https://ozzmaker.com/berrygps-setup-guide-raspberry-pi/
+- Follow every step at :  https://ozzmaker.com/berrygps-setup-guide-raspberry-pi/
+- while you are in the raspi-config also
+  - enable SSH
+  - change the power LED to blink on disk activity, crude but handy to see that the sensor data logs are being written
 
 ### Install influxdb ver 1.8.5 (Raspberry pi) 
 ```bash
