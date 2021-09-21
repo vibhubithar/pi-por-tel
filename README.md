@@ -60,8 +60,9 @@ sudo systemctl enable influxdb.service
 ```
 ### Preparing system 
 ```bash
-sudo apt-get install git 
-sudo apt-get install i2c-tools
+sudo apt-get install -y git 
+sudo apt-get install -y i2c-tools
+sudo apt-get install -y python3-pip
 ```
 ### Preparing system to run Python Code 
 ```bash
