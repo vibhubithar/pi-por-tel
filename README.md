@@ -25,7 +25,7 @@ So assemble, clone and go-on!
 
 - Raspberry Pi Zero (Chosen because the form factor is small) - https://amzn.to/3nRFF2A 
 - Berry IMU GPS - V4 (GPS IMU HAT for RPI) - https://amzn.to/3AtjZxd
-- External powered GPS antenna - https://amzn.to/2XBlEmg
+- External powered GPS antenna (optional but highly recommended from my experience) - https://amzn.to/2XBlEmg
 - Mini router (optional but handy) - https://amzn.to/3hOvk3m
 
 ## Hardware Assembly
