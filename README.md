@@ -67,7 +67,7 @@ sudo apt-get install -y python3-pip
 ```
 ### Installing Python Libraries 
 ```bash
-sudo pip3 install serial 
+sudo pip3 install pyserial 
 sudo pip3 install pynmea2 
 sudo pip3 install board 
 sudo pip3 install busio
@@ -81,6 +81,7 @@ git clone https://github.com/vibhubithar/pi-por-tel.git
 ```
 2. Run calibrateBerryIMU.py (optional but important to get better compass heading readings)
 ```bash
+cd ~/pi-por-tel/
 python3 calibrateBerryIMU.py
 
 (output will look like this)
