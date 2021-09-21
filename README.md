@@ -43,8 +43,9 @@ So assemble, clone and go-on!
 
 - Follow every step at :  https://ozzmaker.com/berrygps-setup-guide-raspberry-pi/
 - while you are in the raspi-config also
-  - enable SSH
-  - change the power LED to blink on disk activity, crude but handy to see that the sensor data logs are being written
+  - Enable SSH
+  - Enable I2C in the interface
+  - Change the power LED to blink on disk activity, crude but handy to see that the sensor data logs are being written
 
 ### Install influxdb ver 1.8.5 (Raspberry pi) 
 ```bash
@@ -64,12 +65,13 @@ sudo apt-get install -y git
 sudo apt-get install -y i2c-tools
 sudo apt-get install -y python3-pip
 ```
-### Preparing system to run Python Code 
+### Installing Python Libraries 
 ```bash
 sudo pip3 install serial 
 sudo pip3 install pynmea2 
 sudo pip3 install board 
-sudo pip3 install busio 
+sudo pip3 install busio
+sudo pip3 install smbus 
 sudo pip3 install influxdb
 ```
 ## Usage
