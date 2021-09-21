@@ -58,6 +58,8 @@ sudo apt update && sudo apt install -y influxdb
 sudo systemctl unmask influxdb.service
 sudo systemctl start influxdb
 sudo systemctl enable influxdb.service
+
+https://s3.amazonaws.com/dl.influxdata.com/influxdb/releases/influxdb_1.8.5_armhf.deb
 ```
 ### Preparing system 
 ```bash
