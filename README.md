@@ -74,7 +74,9 @@ sudo pip3 install influxdb
 ```
 ## Usage
 1. Clone the repository on your raspberry pi
+```bash
 git clone https://github.com/vibhubithar/pi-por-tel.git
+```
 2. Run calibrateBerryIMU.py (optional but important to get better compass heading readings)
 ```bash
 python3 calibrateBerryIMU.py
