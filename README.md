@@ -51,15 +51,10 @@ So assemble, clone and go-on!
 ```bash
 sudo apt update
 sudo apt upgrade -y
-wget -qO- https://repos.influxdata.com/influxdb.key | sudo apt-key add -
-source /etc/os-release
-echo "deb https://repos.influxdata.com/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
-sudo apt update && sudo apt install -y influxdb
+wget https://s3.amazonaws.com/dl.influxdata.com/influxdb/releases/influxdb_1.8.5_armhf.deb
 sudo systemctl unmask influxdb.service
 sudo systemctl start influxdb
 sudo systemctl enable influxdb.service
-
-https://s3.amazonaws.com/dl.influxdata.com/influxdb/releases/influxdb_1.8.5_armhf.deb
 ```
 ### Preparing system 
 ```bash
