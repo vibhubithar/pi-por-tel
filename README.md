@@ -112,6 +112,58 @@ with tag values for influxdb
 ```bash
 python3 berryIMU-Gforce-TPA-GPS-influx.py --trip_type '<trip type on road /water / offroad>' --vehicle_type '<vehcile type SUV>' --brand '<vehicle brand>' --model '<vehicle model>' --seats <number of passengers> --mode '<what mode was the car in comfort/sports>' --logger_location '<location where device was placed>' --owner '<owner of the vehicle>' --tripID <numerical id of the trip> --trip_desc '<description of trip>'
 ```
+## Aggregator setup
+Aggregator will be the machine where all the data from the edge node will be stored for further processing. 
+
+I'll use Ubuntu 20.04 for it as installation is simpler and much less prone to failures
+
+```bash
+echo "deb https://repos.influxdata.com/ubuntu focal stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+sudo curl -sL https://repos.influxdata.com/influxdb.key | sudo apt-key add -
+sudo apt-get install influxdb
+sudo systemctl enable --now influxdb
+systemctl status influxdb
+```
+If you would like to use pythin to access the database also install influxDB python libraries
+```bash
+pip3 install influxdb
+```
+
+## The Hub-spoke model for data collection and aggregation
+![hubsokepiportel](https://user-images.githubusercontent.com/10491706/142311472-37fccd82-9f4c-40d4-9b24-dfa9e401e314.png)
+
+Pi-Por-Tel is designed to collect data offline in a vehicle to keep the system design minimalistic so to say.
+Designing it this way reduces the complexities of providing cellular connectivity and other associated complications. See my previous blog on this at https://vibhubithar.medium.com/collecting-vehicle-telemetry-with-pi-por-tel-device-d0d86bf08333
+
+In my design, there are two things involved:
+
+ 1. Aggregation node (AN) — this is where all the edge nodes upload their data, could be on edge or cloud
+ 2. Edge node (EN) — collecting data offline
+    
+ I aggregate data in four steps as mentioned below:
+
+- Export data on Aggregation node (first instal influxdb and then perform this is step to create a backup of existing data) 
+```bash
+sudo influx_inspect export -waldir /var/lib/influxdb/wal -datadir /var/lib/influxdb/data -out "influx_backup_aggregationnode.db" -database gpsLogger
+```
+- Export data on Edge node
+```bash
+sudo influx_inspect export -waldir /var/lib/influxdb/wal -datadir /var/lib/influxdb/data -out "influx_backup_edgenode1.db" -database gpsLogger
+```
+- Import data on Aggregation node
+```bash
+export INFLUX_USERNAME=<your username>
+export INFLUX_PASSWORD=<your password>
+influx -database gpsLogger -import -path=influx_backup_edgenode1.db
+```
+- Remove data from the Edge Node
+```bash
+drop measurement "<measurement name>"
+```
+The steps above can easily be automated to detect connectivity on the Edge node (wifi in my case) and trigger steps to export data and then remove old data from the Edge node. Once all the Edge nodes have sent data to the Aggregation node run a batch job to import data.
+
+With that being said, what if you are looking for near real-time telemetry then consider the current Edge node’s InfluxDB instance as your buffer. All you have to do is to add connectivity to the Edge node and create batches of data and send them to the Aggregation node
+
 ## Outcome of all the hardwork as plotted in grafana
 I'll be talking more about the aggregator setup in a separate repository as I dont recommend setting up grafana on the RPI 0
 
