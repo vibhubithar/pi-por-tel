@@ -52,6 +52,7 @@ So assemble, clone and go-on!
 sudo apt update
 sudo apt upgrade -y
 wget https://s3.amazonaws.com/dl.influxdata.com/influxdb/releases/influxdb_1.8.5_armhf.deb
+sudo dpkg -i influxdb_1.8.5_armhf.deb
 sudo systemctl unmask influxdb.service
 sudo systemctl start influxdb
 sudo systemctl enable influxdb.service
