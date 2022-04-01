@@ -68,7 +68,7 @@ sudo apt-get install -y python3-pip
 sudo pip3 install pyserial 
 sudo pip3 install pynmea2 
 sudo pip3 install board 
-sudo pip3 install python-smbus 
+sudo pip3 install python3-smbus 
 sudo pip3 install influxdb
 ```
 ## Usage
