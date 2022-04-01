@@ -72,11 +72,21 @@ sudo pip3 install python3-smbus
 sudo pip3 install influxdb
 ```
 ## Usage
-1. Clone the repository on your raspberry pi
+1. sudo nano /etc/modules 
+and add 2 lines
+i2c-dev
+i2c-bcm2708
+
+2. sudo nano /boot/config.txt
+and add
+dtparam=i2c_arm=on
+dtparam=i2c1=on
+
+3. Clone the repository on your raspberry pi
 ```bash
 git clone https://github.com/vibhubithar/pi-por-tel.git
 ```
-2. Run calibrateBerryIMU.py (optional but important to get better compass heading readings)
+4. Run calibrateBerryIMU.py (optional but important to get better compass heading readings)
 ```bash
 cd ~/pi-por-tel/
 python3 calibrateBerryIMU.py
@@ -89,7 +99,7 @@ magXmax = -1745
 magYmax = 2243
 magZmax = -519
 ```
-3. Paste the results of the step above in the berryIMU-Gforce-TPA-GPS-influx.py file as shown in the section below
+5. Paste the results of the step above in the berryIMU-Gforce-TPA-GPS-influx.py file as shown in the section below
 ```bash
 ################# Compass Calibration values ############
 # Use calibrateBerryIMU.py to get calibration values
@@ -103,7 +113,7 @@ magXmax =  289
 magYmax =  2633
 magZmax =  2242
 ```
-4. Run the command
+6. Run the command
 without tag values for influxdb
 ```bash
 python3 berryIMU-Gforce-TPA-GPS-influx.py
